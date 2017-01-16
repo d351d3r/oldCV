@@ -282,13 +282,25 @@
 	\end{tabular*}
 }
 
-\newcommand{\twentyitem}[5]{%
+% \newcommand{\twentyitem}[5]{%
+% 	#1&\parbox[t]{0.83\textwidth}{%
+% 		\textbf{#2}% 
+% 		\hfill%
+% 		{\footnotesize#3}\\%
+%         \ifblank{#4}{}{#4 \\}
+% 		#5\vspace{\parsep}%
+% 	}\\
+% }
+
+\newcommand{\twentyitem}[6]{%
 	#1&\parbox[t]{0.83\textwidth}{%
-		\textbf{#2}% 
+		\textbf{#3}% 
 		\hfill%
-		{\footnotesize#3}\\%
-        \ifblank{#4}{}{#4 \\}
-		#5\vspace{\parsep}%
+		{\footnotesize#4}%
+        }\\%
+    #2&\parbox[t]{0.83\textwidth}{%
+		\ifblank{#5}{}{#5 \\}
+		#6\vspace{\parsep}%
 	}\\
 }
 
