@@ -8,6 +8,12 @@
 
 \RequirePackage[quiet]{fontspec}
 \RequirePackage[sfdefault]{ClearSans}
+
+\def\arrow#1{\pspicture[shift=2pt](#1,0)\psline{->}(#1,0)\endpspicture}
+
+\usepackage{pstricks}
+
+\usepackage{fontawesome}
 \RequirePackage{tikz}
 \RequirePackage{xcolor}
 \RequirePackage[absolute,overlay]{textpos}
@@ -81,6 +87,9 @@
 \definecolor{materialbrown}{HTML}{795548}
 \definecolor{materialred}{HTML}{FF4436}
 \definecolor{materialorange}{HTML}{FF5722}
+\definecolor{linkedin}{HTML}{0085AE}
+\definecolor{test}{HTML}{0077be}
+\definecolor{yt}{HTML}{c71610}
 
 \ifdefined\@cv@print
   \colorlet{green}{gray}
@@ -129,6 +138,7 @@
 % Define custom commands for CV info
 \newcommand{\cvdate}[1]{\renewcommand{\cvdate}{#1}}
 \newcommand{\cvlinkedin}[1]{\renewcommand{\cvlinkedin}{#1}}
+\newcommand{\cvgithub}[1]{\renewcommand{\cvgithub}{#1}}
 \newcommand{\cvmail}[1]{\renewcommand{\cvmail}{#1}}
 \newcommand{\cvnumberphone}[1]{\renewcommand{\cvnumberphone}{#1}}
 \newcommand{\cvaddress}[1]{\renewcommand{\cvaddress}{#1}}
@@ -142,13 +152,14 @@
 \newcommand*\icon[1]{\tikz[baseline=(char.base)]{\node[shape=circle,draw,inner sep=1pt, fill=mainblue,mainblue,text=white] (char) {#1};}}
 
 % Command for printing skill progress bars
-\newcommand\interests[1]{ 
-	\renewcommand{\interests}{
+\newcommand\programming[1]{ 
+	\renewcommand{\programming}{
 		\begin{tikzpicture}
+        	\node [above right] at (0, 4) {$0 \: LOC \: \arrow{3.2} \: 5000 \: LOC$};
 			\foreach [count=\i] \x/\y in {#1}{
 				\draw[fill=maingray,maingray] (0,\i) rectangle (6,\i+0.4);
 				\draw[fill=white,mainblue](0,\i) rectangle (\y,\i+0.4);
-				\node [above right] at (0,\i+0.4) {\x};
+				\node [above right] at (0,\i+0.35) {\x};
 			}
 		\end{tikzpicture}
 	}
@@ -171,6 +182,8 @@
     
         \vspace{4mm}
     {\Huge\color{pblue}\cvname}
+    
+    \vspace{2mm}
 
     %------------------------------------------------
     
@@ -178,59 +191,79 @@
 
     %------------------------------------------------
     
-        \vspace{5mm}
-    \renewcommand{\arraystretch}{1.6}
+    \vspace{4mm}
+    \renewcommand{\arraystretch}{2}
     \begin{tabular}{p{1cm} @{\hskip 0.5cm}p{5cm}}
-        
-          \ifthenelse{\equal{\cvlinkedin}{}}{}{
-            {$
-              \begin{array}{l}
-              {\href{\cvlinkedin}{\includegraphics[scale=0.04]{img/LinkedIn_Logo.png}}}
-              \end{array}
-              $} & \href{\cvlinkedin}{\hspace{16mm}/in/hsgadgil} \\
-            }
       \ifthenelse{\equal{\cvnumberphone}{}}{}{
-            {$
+      		{$
               \begin{array}{l}
-              \includegraphics[scale=0.1]{img/tel.png}
+              \hspace{4mm} \Huge \textnormal{\faMobile} 
               \end{array}
               $} 
             & \cvnumberphone\\}
+            
       \ifthenelse{\equal{\href{\cvsite}{\cvsite}}{}}{}{
             {$
               \begin{array}{l}
-              {\href{\cvsite}{\includegraphics[scale=0.05]{img/globe-512.png}}}
+              \hspace{2.8mm} \huge \textnormal{\textcolor{test}{\faGlobe}}
               \end{array}
               $} 
-            & \cvsite\\}
+            & \href{http://\cvsite}{\cvsite} \\}
       \ifthenelse{\equal{\cvmail}{}}{}{
             {$
               \begin{array}{l}
-              {\href{mailto:\cvmail}{\includegraphics[scale=0.05]{img/email.png}}}
+              \hspace{2.5mm} \huge \textnormal{\textcolor{yt}{\faEnvelopeO}}
               \end{array}
               $} 
-            & \href{mailto:\cvmail}{\cvmail}}
+            & \href{mailto:\cvmail}{\cvmail} \\}
+      
+       \ifthenelse{\equal{\cvlinkedin}{}}{}{
+            {$
+              \begin{array}{l}
+              \hspace{3mm} \huge \textnormal{\textcolor{linkedin}{\faLinkedin}}
+              \end{array}
+              $} & \href{https://www.linkedin.com\cvlinkedin}{\cvlinkedin} \\
+            }  
+        \ifthenelse{\equal{\cvgithub}{}}{}{
+            {$
+              \begin{array}{l}
+              \hspace{3mm} \huge \textnormal{\faGithub}
+              \end{array}
+              $} & \href{https://www.github.com/\cvgithub}{\cvgithub} \\
+            }   
+            
     \end{tabular}
 
     %------------------------------------------------
-        \vspace{3mm}
-        \profilesection{Skills}{4cm}
+    \vspace{4mm}
+    \profilesection{Skills}{4cm}
+%     \vspace{1mm}
+    {\large \textbf{Overview}}
 
-    	\skills
+	\skills
         
         %------------------------------------------------
-        \vspace{3mm}
-        \profilesection{Interests}{3cm} 
-        
-        \interests
         
         \vspace{3mm}
-        \profilesection{Languages}{2.4cm} 
-        {$
-              \begin{array}{l}
-              \hspace{-2mm}{\includegraphics[scale=0.45]{img/languages_muted.png}}
-              \end{array}
-        $}   
+%         \profilesection{Programming}{1.4cm} 
+	 {\large \textbf{Programming}}
+%         {$
+%               \begin{array}{l}
+%               \hspace{-2mm}{\includegraphics[scale=0.45]{img/languages_muted.png}}
+%               \end{array}
+%         $}   
+
+		 \programming
+         
+        \vspace{4mm}
+        \profilesection{Projects}{3cm} 
+        
+        \textbf{DecAR} - An augmented reality interior decoration app for Android \\
+        \textbf{CIS*6320} - An implementation of the Bicubic interpolation algorithm in C++
+        \textbf{CIS*6650} - A comparative statistical study of SVM kernels, and number of hidden layers in ANN, on 5 UCI datasets
+        \textbf{CIS*6660} - A data linkage project to integrate Canada's WWI casualties and 1901 Canadian census using an SVM
+        \textbf{CIS*6650} - A statistical study of spurious correlations, such as correlating beer production with election outcome
+      
   \end{textblock}
 }
 
@@ -327,7 +360,7 @@
 %	 MARGINS AND LINKS
 %----------------------------------------------------------------------------------------
 
-\RequirePackage[left=7.6cm,top=0.05cm,right=1cm,bottom=0.05cm,nohead,nofoot]{geometry}
+\RequirePackage[left=7.6cm,top=0.1cm,right=1cm,bottom=0.1cm,nohead,nofoot]{geometry}
 
 
 \usepackage{smartdiagram}
