@@ -3,12 +3,9 @@
 % LaTeX Template
 % Version 1.0 (14/7/16)
 %
-% This template has been downloaded from:
-% http://www.LaTeXTemplates.com
-%
 % Original author:
 % Carmine Spagnuolo (cspagnuolo@unisa.it) with major modifications by 
-% Vel (vel@LaTeXTemplates.com)
+% Vel (vel@LaTeXTemplates.com) and Harsh (harsh.gadgil@gmail.com)
 %
 % License:
 % The MIT License (see included LICENSE file)
@@ -21,7 +18,7 @@
 
 \documentclass[letterpaper]{twentysecondcv} % a4paper for A4
 
-% Command for printing skill progress bars
+% Command for printing skill overview bubbles
 \newcommand\skills{ 
 ~
 	\smartdiagram[bubble diagram]{
@@ -35,12 +32,21 @@
     }
 }
 
+% Programming skill bars
 \programming{{C $\textbullet$ C++  $\textbullet$ R / 3}, {Java $\textbullet$ SQL $\textbullet$ \large \LaTeX / 3.5}, {HTML5 $\textbullet$ JS $\textbullet$ Python / 5}}
+
+% Projects text
+\projects{
+\textbf{DecAR} - An augmented reality interior decoration app for Android \\
+        \textbf{CIS*6320} - An implementation of the Bicubic interpolation algorithm in C++
+        \textbf{CIS*6650} - A comparative statistical study of SVM kernels, and number of hidden layers in ANN, on 5 UCI datasets
+        \textbf{CIS*6660} - A data linkage project to integrate Canada's WWI casualties and 1901 Canadian census using an SVM
+        \textbf{CIS*6650} - A statistical study of spurious correlations, such as correlating beer production with election outcome
+}
 
 %----------------------------------------------------------------------------------------
 %	 PERSONAL INFORMATION
 %----------------------------------------------------------------------------------------
-
 % If you don't need one or more of the below, just remove the content leaving the command, e.g. \cvnumberphone{}
 
 \cvname{HARSH GADGIL} % Your name
@@ -96,8 +102,6 @@
         \item Proposed a scalable stepwise deterministic method to reliably integrate datasets without labeled data. The method performs comparably with a method that incorporates a Support Vector Machine
         \item Constructed a rich longitudinal dataset to enable comphrehensive time-series analyses about WWI Canadian society and military
         \item \textbf{Tools}: R, Python, scikit-learn, BeautifulSoup, pandas, matplotlib
-%         \item A paper describing the method is accepted for publication in proceedings of the IEEE International Conference of Data Mining 2016
-% 		\item \textcolor{mainblue}{Related publication:} L. Antonie, H. Gadgil, G. Grewal, and K. Inwood, “Historical Data Integration - A Study of WWI Canadian Soldiers,” in 2016 IEEE 16th International Conference on Data Mining Workshops (ICDMW), pp. 186-193, IEEE, 2016.
 		\end{itemize}}
         }
 \end{twenty}

@@ -164,6 +164,11 @@
 		\end{tikzpicture}
 	}
 }
+\newcommand\projects[1]{ 
+	\renewcommand{\projects}{
+		{#1}
+	}
+}
 
 %----------------------------------------------------------------------------------------
 %  SIDEBAR LAYOUT
@@ -237,7 +242,7 @@
     %------------------------------------------------
     \vspace{4mm}
     \profilesection{Skills}{4cm}
-%     \vspace{1mm}
+    
     {\large \textbf{Overview}}
 
 	\skills
@@ -245,24 +250,15 @@
         %------------------------------------------------
         
         \vspace{3mm}
-%         \profilesection{Programming}{1.4cm} 
-	 {\large \textbf{Programming}}
-%         {$
-%               \begin{array}{l}
-%               \hspace{-2mm}{\includegraphics[scale=0.45]{img/languages_muted.png}}
-%               \end{array}
-%         $}   
+       
+	 {\large \textbf{Programming}} 
 
 		 \programming
          
         \vspace{4mm}
         \profilesection{Projects}{3cm} 
         
-        \textbf{DecAR} - An augmented reality interior decoration app for Android \\
-        \textbf{CIS*6320} - An implementation of the Bicubic interpolation algorithm in C++
-        \textbf{CIS*6650} - A comparative statistical study of SVM kernels, and number of hidden layers in ANN, on 5 UCI datasets
-        \textbf{CIS*6660} - A data linkage project to integrate Canada's WWI casualties and 1901 Canadian census using an SVM
-        \textbf{CIS*6650} - A statistical study of spurious correlations, such as correlating beer production with election outcome
+        \projects
       
   \end{textblock}
 }
