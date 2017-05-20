@@ -5,7 +5,7 @@
 %
 % Original author:
 % Carmine Spagnuolo (cspagnuolo@unisa.it) with major modifications by 
-% Vel (vel@LaTeXTemplates.com) and Harsh (harsh.gadgil@gmail.com)
+% Vel (vel@LaTeXTemplates.com), Harsh (harsh.gadgil@gmail.com) and johayon
 %
 % License:
 % The MIT License (see included LICENSE file)
@@ -20,44 +20,57 @@
 
 % Command for printing skill overview bubbles
 \newcommand\skills{ 
-~
+~ 
 	\smartdiagram[bubble diagram]{
-        \textbf{Full Stack}\\\textbf{Dev},
-        \textbf{Relational/}\\\textbf{Document}\\\textbf{Databases},
-        \textbf{~~~~~OOP~~~~~~},
-        \textbf{Mobile}\\\textbf{Dev},
         \textbf{Machine}\\\textbf{Learning},
-        \textbf{Test}\\\textbf{~~Automation~~},
-        \textbf{Statistical}\\\textbf{Analysis}
+        \textbf{Visualization},
+				\textbf{~~~Deep~~~}\\\textbf{Learning},
+        \textbf{~~~~~~~~Big~~~~~~~~}\\\textbf{Data},
+        \textbf{Statistical}\\\textbf{Analysis},
+				\textbf{Data}\\\textbf{Wrangling}
     }
 }
 
 % Programming skill bars
-\programming{{C $\textbullet$ C++  $\textbullet$ R / 3}, {Java $\textbullet$ SQL $\textbullet$ \large \LaTeX / 3.5}, {HTML5 $\textbullet$ JS $\textbullet$ Python / 5}}
+%\programming{ { Java $\textbullet$ MatLab $\textbullet$ Maple/ 3}, {Scala $\textbullet$ R %$\textbullet$ Spark $\textbullet$ \LaTeX/ 4}, {Python $\textbullet$ SQL/ 5}}
 
-% Projects text
-\projects{
-\textbf{DecAR} - An augmented reality interior decoration app for Android \\
-        \textbf{CIS*6320} - An implementation of the Bicubic interpolation algorithm in C++
-        \textbf{CIS*6650} - A comparative statistical study of SVM kernels, and number of hidden layers in ANN, on 5 UCI datasets
-        \textbf{CIS*6660} - A data linkage project to integrate Canada's WWI casualties and 1901 Canadian census using an SVM
-        \textbf{CIS*6650} - A statistical study of spurious correlations, such as correlating beer production with election outcome
+\tools{
+\tikzset{
+  every shadow/.style={
+    fill=none,
+    shadow xshift=0pt,
+    shadow yshift=0pt}
 }
+\definecolor{pblue}{HTML}{0395DE}
+\smartdiagramset{set color list = {pblue,pblue,pblue,pblue,pblue,pblue,pblue}}
+\smartdiagram[descriptive diagram]{
+{\large \faFlask,{Sklearn Xgboost Caret RandomForest TensorFlow Keras NLTK Gensim Forecast Pandas Numpy}},
+{\large \mfHadoop, {Spark Mllib GraphX Sparksql Zeppelin Livy}}, 
+{\large \faDatabase,{MySql Elastic-Search Hbase Cassandra}}, {\large \faAreaChart,{Matplotlib Seaborn ggplot Plotly D3js Tableau \LaTeX}},
+{\large \faCogs,{git Travis AWS Unittest Flask Airflow Vertx}}}
+
+}
+
+\programmings{23/materialteal/\textbf{\textbf{\textsf{R}}},  23/materialcyan/\textbf{\mfScala Scala}, 35/orange/\textbf{\ \mfPython Python}, 10.5/green/\textbf{\ \mfJavaBold Java}, 8.5/materialorange/\textbf{C++}}{2.25}{0.75}
+
+% Interest icons text
+\interests{ \textcolor{pblue}{\large \faBook \ \ \faMusic \ \ \faTv \ \ \faBicycle  \ \ \faGamepad \ \ \faAndroid \ \ \faLinux
+}}
 
 %----------------------------------------------------------------------------------------
 %	 PERSONAL INFORMATION
 %----------------------------------------------------------------------------------------
 % If you don't need one or more of the below, just remove the content leaving the command, e.g. \cvnumberphone{}
 
-\cvname{HARSH GADGIL} % Your name
-\cvjobtitle{ Data Scientist } % Job
+\cvname{Jonathan Ohayon, Ph.D} % Your name
+\cvjobtitle{ Data Scientist \\ Machine Learning } % Job
 % title/career
 
-\cvlinkedin{/in/hsgadgil}
-\cvgithub{opensorceror}
-\cvnumberphone{(647) 221 7999} % Phone number
-\cvsite{hgadgil.com} % Personal website
-\cvmail{harsh.gadgil@gmail.com} % Email address
+\cvbirthday{12/04/1986} \cvsite{French-Canadian} % Personal website
+\cvhome{Lyon, France}  \cvnumberphone{+33 640958173} % Phone number
+\cvmail{johayon.math@gmail.com} % Email address
+\cvlinkedin{/in/johayon}
+\cvgithub{johayon}
 
 %----------------------------------------------------------------------------------------
 
@@ -65,107 +78,150 @@
 
 \makeprofile % Print the sidebar
 
-%----------------------------------------------------------------------------------------
-%	 EDUCATION
-%----------------------------------------------------------------------------------------
-\section{Education}
-
-\begin{twenty} % Environment for a list with descriptions
-	\twentyitem
-    	{2015 - 2017}
-        {}
-        {MSc., Computer Science}
-        {\href{http://www.uoguelph.ca/}{University of Guelph, Canada}}
-        {}
-        {GPA: 3.7/4.0, First Class}
-	\twentyitem
-    	{2009 - 2013}
-		{}
-        {BEng., Computer Engineering}
-        {\href{http://www.unipune.ac.in/}{University of Pune, India}}
-        {}
-        {First Class with Distinction}
-	%\twentyitem{<dates>}{<title>}{<organization>}{<location>}{<description>}
-\end{twenty}
-
-\section{Research}
-\begin{twenty}
-	\twentyitem
-    	{2015 - 2017}
-		{}
-        {MSc. Candidate, Graduate Research Assistant}
-        {\href{http://www.uoguelph.ca/}{University of Guelph}}
-        {}
-        {
-       	\textbf{Thesis}: Data Integration from Multiple Historical Sources to Study Canadian Casualties of WWI
-        {\begin{itemize}
-        \item Proposed a scalable stepwise deterministic method to reliably integrate datasets without labeled data. The method performs comparably with a method that incorporates a Support Vector Machine
-        \item Constructed a rich longitudinal dataset to enable comphrehensive time-series analyses about WWI Canadian society and military
-        \item \textbf{Tools}: R, Python, scikit-learn, BeautifulSoup, pandas, matplotlib
-		\end{itemize}}
-        }
-\end{twenty}
-
-\section{Publications}
-L. Antonie, H. Gadgil, G. Grewal, and K. Inwood, “Historical Data Integration - A Study of WWI Canadian Soldiers,” in 2016 IEEE 16th International Conference on Data Mining Workshops (ICDMW), pp. 186-193, IEEE, 2016.
 
 %----------------------------------------------------------------------------------------
 %	 EXPERIENCE
 %----------------------------------------------------------------------------------------
 
-\section{Experience}
+\section{Experience}{\faAlignJustify}
 
 \begin{twenty} % Environment for a list with descriptions
 \twentyitem
-    	{April 2017 -}
+    	{2016 -}
 		{Present}
-        {Data Engineer}
-        {\href{http://www.bell.ca/}{Bell}}
+        {Data Scientist}
+        {\href{http://www.holimetrix.ccom/}{Holimetrix}}
         {}
-        {}
-        \\
+        {
+				\begin{itemize}
+				\item TV attribution using Time Series Analysis and Forecasting. 
+				\item Cross-Device Pairing across multiple websites.
+				\item Google like Sessions Creation from Terabytes of log events.
+				\item Global TV study across clients and channels.
+				\item \textbf{tools}: Python, Scala, Spark, GraphX, AWS, Travis, git
+				\end{itemize}} \\
+				
 	\twentyitem
-    	{Sep 2015 -}
-		{May 2016}
-        {Co-founder \& Full Stack Developer}
-        {\href{http://www.localxchange.ca/}{LocalXChange Inc.}}
+    	{2016 -}
+		{Present}
+        {Data Scientist - Machine Learning Engineer}
+        {FreeLance}
         {}
-        {
         {\begin{itemize}
-        \item In a team of 2, raised \$8,000 in funding from The Hub incubator at the University of Guelph, to develop a prototype hyperlocal content platform, aimed at delivering local news and events from community organizations to local users in realtime (i.e., hyperlocal)
-        \item In a team of 3, built hybrid mobile \& web apps with Ionic, Angular.js and MongoDB, surpassing 1,000 users within a month since launch
-        \item Met with city officials, including the Mayor of Guelph, and university officials to discuss marketing \& business strategies for the platform 
-    \end{itemize}}
-        }
-    \\   
+        \item Scoring algorithm development with CetaData.
+        \item Scoring models for e-mail marketing campaigns. 
+        \item Statistical Analysis and predictive models for healthCare. 
+				\item \textbf{tools}: Python, R, jupyter, git, Unittest, Plotly
+    \end{itemize}}\\
+		
     \twentyitem
-   		{Sep 2015 -}
-		{Dec 2016}
-        {Graduate Teaching Assistant}
-        {\href{http://www.uoguelph.ca}{University of Guelph}}
+   		{2015 - 2016}
+		{}
+        {Data Scientist - Machine Learning Engineer}
+        {\href{http://www.cetadata.com/}{CetaData}}
         {}
-        {
         {\begin{itemize}
-        \item TA for CIS*2430 (OOP), CIS*4150 (Software Reliability \& Testing) and CIS*3530 (Database Systems \& Concepts) courses
-    \end{itemize}}
-        }
-     \\
+				\item Development of a scoring algorithm on a saas solution.
+        \item Predictive model of speed limitation on road chunks.
+				\item Users segmentation using mobile app data.
+				\item \textbf{tools}: C++, Python, Sklearn, StatsModels, Seaborn
+    \end{itemize}} \\
+		
      \twentyitem
-   		{Dec 2013 -}
-		{Apr 2015}
-        {Test Automation Engineer}
-        {\href{http://www.synechron.com/}{Synechron}}
+   		{2015 - 2015}
+		{}
+        {Data Scientist}
+        {\href{http://www.keyrus.com/}{Keyrus}}
         {}
         {
         \begin{itemize}
-        \item Developed a \textit{Keyword Driven} and \textit{Behavior Driven} test automation framework for \href{https://www.microsoft.com/en-ca/dynamics/crm.aspx}{Microsoft Dynamics CRM}. Wrote an efficient recursive function to search multi-level frames, reducing development time by approximately two weeks. Won SPOT award {\includegraphics[scale=0.05]{img/trophy.png}}
-        
-        \textit{My work opened up a new position in the organization, enabling it to earn additional revenue of \$3,500 per month (estimated)}
-        \item Demonstrated by proof of concept that rewriting a test automation framework for \href{https://www.microsoft.com/en-ca/dynamics/erp-ax-overview.aspx}{Microsoft Dynamics AX}, using an open source library (White) instead of a proprietary one (Coded UI), would enable the team to save \$4,000 annually by downgrading the prevailing edition of Microsoft Visual Studio from \textit{Premium} to \textit{Professional}
-    \end{itemize}
-    	}
+        \item Worked on the development of a machine-learning platform as a service on AWS. Recommendation system on spark with MLlib
+				\item \textbf{tools}: Spark, MLlib, Hbase, Cassandra
+    \end{itemize} }\\
+		
+	\twentyitem
+   		{2012 - 2013}
+		{}
+        {Research and Teaching Assistant}
+        {\href{http://www.univ-lyon1.fr/}{University of Lyon I}}
+        {}
+        {}
+	\twentyitem
+   		{2011 - 2012}
+		{}
+        {Research and Teaching Assistant}
+        {\href{http://www.umontpellier.fr/}{University of Montpellier II}}
+        {}
+        {}
         
 	%\twentyitem{<dates>}{<title>}{<location>}{<description>}
 \end{twenty}
 
+
+
+
+
+%----------------------------------------------------------------------------------------
+%	 EDUCATION
+%----------------------------------------------------------------------------------------
+\section{Education}{\faGraduationCap}
+
+\begin{twenty} % Environment for a list with descriptions
+	\twentyitemshorttest
+    	{2014 - 2015}
+        {}
+        {MSc., Big data - Machine Learning}
+        {Telecom ParisTech}
+        {with Honor}
+				
+	\twentyitemshorttest
+    	{2008 - 2012}
+		{}
+        {Ph.D in Mathematics}
+        {\href{http://www.umontpellier.fr/}{University of Montpellier II}}
+        {}
+				
+	\twentyitemshorttest
+    	{2006 - 2008}
+		{}
+        {MSc. in Mathematics and Statistics}
+        {\href{http://www.umontpellier.fr/}{University of Montpellier II}}
+        {Major in Mathematics, with Honor}
+	%\twentyitem{<dates>}{<title>}{<organization>}{<location>}{<description>}
+\end{twenty}
+
+\section{Projects - Research}{\faClipboard}
+\begin{twenty}
+	\twentyitem
+			{2015 - }
+			{Present}
+			{Data Science, Machine Learning Challenge}
+			{Kaggle - DataScience}
+			{}
+			{\begin{itemize}
+			 \item Quora - Cdiscount - Avito - Human or Robot - SpringLeaf
+			 \item \textbf{tools}: Python, Xgboost, TensorFlow, Keras, NLTK, gensim
+			\end{itemize}}
+	\twentyitem
+    	{2014 - 2015}
+		{}
+        {MSc., Big data - Machine Learning}
+        {Yuzu}
+        {}
+        {\begin{itemize}
+        \item Proposed a scalable recommender system using Random Forest.
+        \item Cross-validated the system by taking in account the temporal structure of the Data.
+        \item \textbf{tools}: Spark, MLlib, Zeppelin, Elastic-Search
+		\end{itemize}}
+	\twentyitem
+			{2008 - 2012}
+			{}
+			{Ph.D in Mathematics}
+			{\href{http://www.umontpellier.fr/}{University of Montpellier II}}
+			{}
+			{\begin{itemize}
+			\item \textbf{thesis}: Quantization/Deformation of co-isotropic Lie Sub-algebra
+			\item \textbf{keywords}: Quantum Groups, Universal quantization, Properads, Lie Bialgebra and Poisson Homogeneous Space.
+			\end{itemize}}
+\end{twenty}
 \end{document} 

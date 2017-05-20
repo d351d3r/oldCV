@@ -14,6 +14,7 @@
 \usepackage{pstricks}
 
 \usepackage{fontawesome}
+\usepackage{fontmfizz}
 \RequirePackage{tikz}
 \RequirePackage{xcolor}
 \RequirePackage[absolute,overlay]{textpos}
@@ -137,11 +138,12 @@
 
 % Define custom commands for CV info
 \newcommand{\cvdate}[1]{\renewcommand{\cvdate}{#1}}
+\newcommand{\cvhome}[1]{\renewcommand{\cvhome}{#1}}
 \newcommand{\cvlinkedin}[1]{\renewcommand{\cvlinkedin}{#1}}
 \newcommand{\cvgithub}[1]{\renewcommand{\cvgithub}{#1}}
 \newcommand{\cvmail}[1]{\renewcommand{\cvmail}{#1}}
 \newcommand{\cvnumberphone}[1]{\renewcommand{\cvnumberphone}{#1}}
-\newcommand{\cvaddress}[1]{\renewcommand{\cvaddress}{#1}}
+\newcommand{\cvbirthday}[1]{\renewcommand{\cvbirthday}{#1}}
 \newcommand{\cvsite}[1]{\renewcommand{\cvsite}{#1}}
 \newcommand{\aboutme}[1]{\renewcommand{\aboutme}{#1}}
 \newcommand{\profilepic}[1]{\renewcommand{\profilepic}{#1}}
@@ -155,20 +157,102 @@
 \newcommand\programming[1]{ 
 	\renewcommand{\programming}{
 		\begin{tikzpicture}
-        	\node [above right] at (0, 4) {$0 \: LOC \: \arrow{3.2} \: 5000 \: LOC$};
 			\foreach [count=\i] \x/\y in {#1}{
 				\draw[fill=maingray,maingray] (0,\i) rectangle (6,\i+0.4);
-				\draw[fill=white,mainblue](0,\i) rectangle (\y,\i+0.4);
+				\draw[fill=white,pblue](0,\i) rectangle (\y,\i+0.4);
 				\node [above right] at (0,\i+0.35) {\x};
 			}
 		\end{tikzpicture}
 	}
 }
-\newcommand\projects[1]{ 
-	\renewcommand{\projects}{
+
+
+%\usetikzlibrary{decorations.text}
+% The main macro
+%\newcommand{\topics}[3]{
+%
+  %  \begin{tikzpicture}
+%	\pgfmathsetmacro{\heigth}{#3}
+%	
+%	flow diagram:horizontal
+	
+
+
+
+% Command for printing donuts programming interest
+
+\usetikzlibrary{decorations.text}
+% The main macro
+\newcommand{\wheelchart}[3]{
+    % Calculate total
+    \pgfmathsetmacro{\totalnum}{0}
+    \foreach \value/\colour/\name in {#1} {
+        \pgfmathparse{\value+\totalnum}
+        \global\let\totalnum=\pgfmathresult
+    }
+
+    \begin{tikzpicture}
+	\pgfmathsetmacro{\outerradius}{#2}
+	\pgfmathsetmacro{\innerradius}{#3}
+      % Calculate the thickness and the middle line of the wheel
+      \pgfmathsetmacro{\wheelwidth}{\outerradius-\innerradius}
+      \pgfmathsetmacro{\midradius}{(\outerradius+\innerradius)/2}
+
+      % Rotate so we start from the top
+      \begin{scope}[rotate=320]
+
+      % Loop through each value set. \cumnum keeps track of where we are in the wheel
+      \pgfmathsetmacro{\cumnum}{0}
+      \foreach \value/\colour/\name in {#1} {
+            \pgfmathsetmacro{\newcumnum}{\cumnum + \value/\totalnum*360}
+
+            % Calculate the percent value
+            \pgfmathsetmacro{\percentage}{\value/\totalnum*100}
+            % Calculate the mid angle of the colour segments to place the labels
+            \pgfmathsetmacro{\midangle}{-(\cumnum+\newcumnum)/2}
+
+            % Draw the color segments. Somehow, the \midrow units got lost, so we add 'pt' at the end. Not nice...
+            \fill[\colour,opacity=0.65,draw=white,very thick] (-\cumnum:\outerradius) arc (-\cumnum:-(\newcumnum):\outerradius) --
+            (-\newcumnum:\innerradius) arc (-\newcumnum:-(\cumnum):\innerradius) -- cycle;
+
+		% add name
+		\path[draw=red,decoration={text, text={| \Large | \textbf{\name}}, text align={align=center}},decorate] (\midangle:\midradius) node {\name};
+
+		% add name with path
+	      %\path[decoration={text, text={| \large | \name}, text align={align=center}},decorate]  (-\newcumnum:\midradius) arc (-\newcumnum:-\cumnum:\midradius) ;
+
+            % Set the old cumulated angle to the new value
+            \global\let\cumnum=\newcumnum
+        }
+     \end{scope}
+    \end{tikzpicture}
+}
+
+
+
+\newcommand\tools[1]{ 
+	\renewcommand{\tools}{
 		{#1}
 	}
 }
+
+\newcommand\programmings[3]{ 
+	\renewcommand{\programmings}{
+\begin{center}
+		{\wheelchart{#1}{#2}{#3}}
+\end{center}
+	}
+}
+
+
+\newcommand\interests[1]{ 
+	\renewcommand{\interests}{ 
+\begin{flushright}
+		{#1}
+\end{flushright}
+	}
+}
+
 
 %----------------------------------------------------------------------------------------
 %  SIDEBAR LAYOUT
@@ -186,9 +270,9 @@
     %------------------------------------------------
     
         \vspace{4mm}
-    {\Huge\color{pblue}\cvname}
+    {\color{pblue}\LARGE \cvname}
     
-    \vspace{2mm}
+    \vspace{4mm}
 
     %------------------------------------------------
     
@@ -196,51 +280,25 @@
 
     %------------------------------------------------
     
-    \vspace{4mm}
-    \renewcommand{\arraystretch}{2}
-    \begin{tabular}{p{1cm} @{\hskip 0.5cm}p{5cm}}
-      \ifthenelse{\equal{\cvnumberphone}{}}{}{
-      		{$
-              \begin{array}{l}
-              \hspace{4mm} \Huge \textnormal{\faMobile} 
-              \end{array}
-              $} 
-            & \cvnumberphone\\}
-            
-      \ifthenelse{\equal{\href{\cvsite}{\cvsite}}{}}{}{
-            {$
-              \begin{array}{l}
-              \hspace{2.8mm} \huge \textnormal{\textcolor{test}{\faGlobe}}
-              \end{array}
-              $} 
-            & \href{http://\cvsite}{\cvsite} \\}
-      \ifthenelse{\equal{\cvmail}{}}{}{
-            {$
-              \begin{array}{l}
-              \hspace{2.5mm} \huge \textnormal{\textcolor{yt}{\faEnvelopeO}}
-              \end{array}
-              $} 
-            & \href{mailto:\cvmail}{\cvmail} \\}
-      
-       \ifthenelse{\equal{\cvlinkedin}{}}{}{
-            {$
-              \begin{array}{l}
-              \hspace{3mm} \huge \textnormal{\textcolor{linkedin}{\faLinkedin}}
-              \end{array}
-              $} & \href{https://www.linkedin.com\cvlinkedin}{\cvlinkedin} \\
-            }  
-        \ifthenelse{\equal{\cvgithub}{}}{}{
-            {$
-              \begin{array}{l}
-              \hspace{3mm} \huge \textnormal{\faGithub}
-              \end{array}
-              $} & \href{https://www.github.com/\cvgithub}{\cvgithub} \\
-            }   
+    \vspace{2mm}
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabular}{p{0.5cm} p{2cm} @{\hskip 0.25cm} p{0.5cm} p{3cm}}
+     \textnormal{\textcolor{pblue}{ \large \faBirthdayCake}} & \cvbirthday &  \textnormal{\textcolor{pblue}{ \large \faGlobe}} & \href{http://\cvsite}{\cvsite} \\
+     \textnormal{\textcolor{pblue}{\large \faHome}} & \cvhome & \textnormal{\textcolor{pblue}{\large \ \faMobile}} & \cvnumberphone  \\
+     \textnormal{\textcolor{pblue}{\faEnvelopeO}}   & \href{mailto:\cvmail}{\cvmail} \\
+     \textnormal{\textcolor{pblue}{\faLinkedin}}  & \href{https://www.linkedin.com\cvlinkedin}{\cvlinkedin} & \textnormal{\textcolor{pblue}{\faGithub}} & \href{https://www.github.com/\cvgithub}{\cvgithub} \\
+     
+          
             
     \end{tabular}
 
+	{\large {Interests}} 
+
+	 \interests
+
     %------------------------------------------------
-    \vspace{4mm}
+    \vspace{2mm}
+
     \profilesection{Skills}{4cm}
     
     {\large \textbf{Overview}}
@@ -249,16 +307,18 @@
         
         %------------------------------------------------
         
-        \vspace{3mm}
+        \vspace{2mm}
        
+
+	{\large \textbf{Tools}} 
+
+		\tools
+
 	 {\large \textbf{Programming}} 
 
-		 \programming
-         
-        \vspace{4mm}
-        \profilesection{Projects}{3cm} 
-        
-        \projects
+		% \programming
+
+		\programmings
       
   \end{textblock}
 }
@@ -280,10 +340,10 @@
 }
 
 
-\renewcommand{\section}[1]{
+\renewcommand{\section}[2]{
   \par\vspace{\parskip}
 	{%
-		\LARGE\headingfont\color{headercolor}%
+		\LARGE \textcolor{pblue}{ \large #2} \ \headingfont\color{headercolor}%
 		\@sectioncolor #1%
 	}
   \par\vspace{\parskip}
@@ -325,11 +385,23 @@
 	#1&\parbox[t]{0.83\textwidth}{%
 		\textbf{#3}% 
 		\hfill%
-		{\footnotesize#4}%
+		{\textcolor{pblue}{\textbf{#4}}}%
         }\\%
     #2&\parbox[t]{0.83\textwidth}{%
 		\ifblank{#5}{}{#5 \\}
 		#6\vspace{\parsep}%
+	}\\
+}
+
+
+\newcommand{\twentyitemshorttest}[5]{%
+	#1&\parbox[t]{0.83\textwidth}{%
+		\textbf{#3}% 
+		\hfill%
+		{\textcolor{pblue}{\textbf{#4}}}%
+        }\\%
+    #2&\parbox[t]{0.83\textwidth}{%
+		\ifblank{#5}{}{#5} %
 	}\\
 }
 
@@ -374,10 +446,18 @@
     % set center bubble color
     bubble center node color = pblue,
     % define the list of colors usable in the diagram
-    set color list = {lightgray, materialcyan, orange, green, materialorange, materialteal, materialamber, materialindigo, materialgreen, materiallime},
+    set color list = {materialcyan, orange, green, materialorange, materialteal, materialamber, materialindigo, materialgreen, materiallime},
     % sets the opacity at which the bubbles are shown
     bubble fill opacity = 0.6,
     % sets the opacity at which the bubble text is shown
     bubble text opacity = 1,
+    description title text width=0.75cm,
+    description title width=1cm,
+    description width=5cm,
+    description text width=5cm,
+    descriptive items y sep =1.25,
+    back arrow distance = 0,
+    back arrow disabled = true
 }
+
 
