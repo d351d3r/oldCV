@@ -1,6 +1,6 @@
 # LaTeX resume template
 
-This is the template I use for my own resume. I've forked it from another repository : 
+This is the template I use for my own resume. I've forked it from Harsh Gadgil's repository : 
 
 1. [Harsh Gadgil's resume template](https://github.com/opensorceror/Data-Engineer-Resume-LaTeX)
 
