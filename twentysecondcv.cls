@@ -291,12 +291,8 @@
     \textnormal{\textcolor{pblue}{\faLinkedin}}  & \href{https://www.linkedin.com\cvlinkedin}{\cvlinkedin}        
     \end{tabular}
 
-	{\large {Interests}} 
-
-	 \interests
-
     %------------------------------------------------
-    \vspace{2mm}
+    \vspace{1mm}
 
     \profilesection{Skills}{4cm}
     
@@ -306,7 +302,7 @@
         
         %------------------------------------------------
         
-        \vspace{2mm}
+        \vspace{1mm}
        
 
 	{\large \textbf{Tools}} 
@@ -318,6 +314,12 @@
 		% \programming
 
 		\programmings
+		
+		\vspace{-3mm}
+		
+	\profilesection{Interests}{2cm} 
+
+	 \interests
       
   \end{textblock}
 }

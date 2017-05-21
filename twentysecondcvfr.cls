@@ -271,7 +271,7 @@
     %------------------------------------------------
     
         \vspace{4mm}
-    {\color{pblue}\LARGE \cvname}
+    {\color{pblue}\LARGE \textbf{\cvname}}
     
     \vspace{4mm}
 
@@ -293,12 +293,8 @@
             
     \end{tabular}
 
-	{\large {Loisirs}} 
-
-	 \interests
-
     %------------------------------------------------
-    \vspace{2mm}
+    \vspace{1mm}
 
     \profilesection{Comp\'etences}{1cm}
     
@@ -308,18 +304,23 @@
         
         %------------------------------------------------
         
-        \vspace{2mm}
+        \vspace{0mm}
        
-
 	{\large \textbf{Outils}} 
 
 		\hspace{-0.55cm} \tools
 
-	 {\large \textbf{Programation}} 
+	 {\large \textbf{Programmation}} 
 
 		% \programming
 
 		\programmings
+
+\vspace{-2mm}
+		
+		\profilesection{Loisirs}{3cm}
+
+	 \interests
       
   \end{textblock}
 }
