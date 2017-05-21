@@ -149,6 +149,7 @@
 \newcommand{\profilepic}[1]{\renewcommand{\profilepic}{#1}}
 \newcommand{\cvname}[1]{\renewcommand{\cvname}{#1}}
 \newcommand{\cvjobtitle}[1]{\renewcommand{\cvjobtitle}{#1}}
+\newcommand{\cvnatio}[1]{\renewcommand{\cvnatio}{#1}}
 
 % Command for printing the contact information icons
 \newcommand*\icon[1]{\tikz[baseline=(char.base)]{\node[shape=circle,draw,inner sep=1pt, fill=mainblue,mainblue,text=white] (char) {#1};}}
@@ -283,13 +284,11 @@
     \vspace{2mm}
     \renewcommand{\arraystretch}{1.2}
     \begin{tabular}{p{0.5cm} p{2cm} @{\hskip 0.25cm} p{0.5cm} p{3cm}}
-     \textnormal{\textcolor{pblue}{ \large \faBirthdayCake}} & \cvbirthday &  \textnormal{\textcolor{pblue}{ \large \faGlobe}} & \href{http://\cvsite}{\cvsite} \\
+     \textnormal{\textcolor{pblue}{ \large \faBirthdayCake}} & \cvbirthday &  \textnormal{\textcolor{pblue}{ \large \faGlobe}} & \cvnatio \\
      \textnormal{\textcolor{pblue}{\large \faHome}} & \cvhome & \textnormal{\textcolor{pblue}{\large \ \faMobile}} & \cvnumberphone  \\
      \textnormal{\textcolor{pblue}{\faEnvelopeO}}   & \href{mailto:\cvmail}{\cvmail} \\
-     \textnormal{\textcolor{pblue}{\faLinkedin}}  & \href{https://www.linkedin.com\cvlinkedin}{\cvlinkedin} & \textnormal{\textcolor{pblue}{\faGithub}} & \href{https://www.github.com/\cvgithub}{\cvgithub} \\
-     
-          
-            
+		\textnormal{\textcolor{pblue}{\faGithub}} & \href{https://www.github.com/\cvgithub}{\cvgithub} &
+    \textnormal{\textcolor{pblue}{\faLinkedin}}  & \href{https://www.linkedin.com\cvlinkedin}{\cvlinkedin}        
     \end{tabular}
 
 	{\large {Interests}} 
@@ -312,9 +311,9 @@
 
 	{\large \textbf{Tools}} 
 
-		\tools
+		 \hspace{-0.55cm} \tools
 
-	 {\large \textbf{Programming}} 
+	  {\large \textbf{Programming}} 
 
 		% \programming
 
@@ -451,13 +450,14 @@
     bubble fill opacity = 0.6,
     % sets the opacity at which the bubble text is shown
     bubble text opacity = 1,
-    description title text width=0.75cm,
-    description title width=1cm,
+    description title text width=0.5cm,
+    description title width=0.5cm,
     description width=5cm,
     description text width=5cm,
     descriptive items y sep =1.25,
     back arrow distance = 0,
-    back arrow disabled = true
+    back arrow disabled = true,
+    border color = white
 }
 
 
