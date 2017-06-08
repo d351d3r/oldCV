@@ -287,7 +287,8 @@
      \textnormal{\textcolor{pblue}{ \large \faBirthdayCake}} & \cvbirthday &  \textnormal{\textcolor{pblue}{ \large \faGlobe}} & \cvnatio \\
      \textnormal{\textcolor{pblue}{\large \faHome}} & \cvhome & \textnormal{\textcolor{pblue}{\large \ \faMobile}} & \cvnumberphone  \\
      \textnormal{\textcolor{pblue}{\faEnvelopeO}}   & \href{mailto:\cvmail}{\cvmail} \\
-     \textnormal{\textcolor{pblue}{\faLinkedin}}  & \href{https://www.linkedin.com\cvlinkedin}{\cvlinkedin} & \textnormal{\textcolor{pblue}{\faGithub}} & \href{https://www.github.com/\cvgithub}{\cvgithub} \\
+     \textnormal{\textcolor{pblue}{\faGithub}} & \href{https://www.github.com/\cvgithub}{\cvgithub} &
+ \textnormal{\textcolor{pblue}{\faLinkedin}}  & \href{https://www.linkedin.com\cvlinkedin}{\cvlinkedin} \\
      
           
             
