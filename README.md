@@ -22,7 +22,7 @@ sudo apt-get install texlive texlive-xetex texlive-fonts-extra
 ```
 
 2. Install an editor
-```` 
+```
 sudo apt install texworks
 ```
 
