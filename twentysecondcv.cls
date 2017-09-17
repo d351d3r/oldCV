@@ -12,7 +12,7 @@
 \def\arrow#1{\pspicture[shift=2pt](#1,0)\psline{->}(#1,0)\endpspicture}
 
 \usepackage{pstricks}
-
+\usepackage{enumerate}
 \usepackage{fontawesome}
 \usepackage{fontmfizz}
 \RequirePackage{tikz}
@@ -200,7 +200,7 @@
       \pgfmathsetmacro{\midradius}{(\outerradius+\innerradius)/2}
 
       % Rotate so we start from the top
-      \begin{scope}[rotate=320]
+      \begin{scope}[rotate=345]
 
       % Loop through each value set. \cumnum keeps track of where we are in the wheel
       \pgfmathsetmacro{\cumnum}{0}
@@ -383,15 +383,8 @@
 % }
 
 \newcommand{\twentyitem}[6]{%
-	#1&\parbox[t]{0.83\textwidth}{%
-		\textbf{#3}% 
-		\hfill%
-		{\textcolor{pblue}{\textbf{#4}}}%
-        }\\%
-    #2&\parbox[t]{0.83\textwidth}{%
-		\ifblank{#5}{}{#5 \\}
-		#6\vspace{\parsep}%
-	}\\
+	#1&\parbox[t]{0.83\textwidth}{\textbf{#3} \hfill {\textcolor{pblue}{\textbf{#4}}}} \\%
+  \multicolumn{2}{r}{\parbox[t]{0.95\textwidth}{\ifblank{#5}{}{#5 \\} #6 \vspace{\parsep}}}\\
 }
 
 
