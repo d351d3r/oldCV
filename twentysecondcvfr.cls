@@ -385,16 +385,10 @@
 % }
 
 \newcommand{\twentyitem}[6]{%
-	#1&\parbox[t]{0.83\textwidth}{%
-		\textbf{#3}% 
-		\hfill%
-		{\textcolor{pblue}{\textbf{#4}}}%
-        }\\%
-    #2&\parbox[t]{0.83\textwidth}{%
-		\ifblank{#5}{}{#5 \\}
-		#6\vspace{\parsep}%
-	}\\
+	#1&\parbox[t]{0.83\textwidth}{\textbf{#3} \hfill {\textcolor{pblue}{\textbf{#4}}}} \\%
+  \multicolumn{2}{r}{\parbox[t]{0.95\textwidth}{\ifblank{#5}{}{#5 \\} #6 \vspace{\parsep}}}\\
 }
+
 
 
 \newcommand{\twentyitemshorttest}[5]{%
