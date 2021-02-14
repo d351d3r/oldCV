@@ -1,5 +1,5 @@
 # My CV
-![Preview](./Cherednichenko CV.png)
+![Preview](https://raw.githubusercontent.com/d351d3r/CV/master/Cherednichenko%20CV.png)
 
 
 # AltaCV, yet another LaTeX CV/Résumé class
