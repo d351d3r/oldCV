@@ -313,8 +313,8 @@
   {\large\color{emphasis}#1\par}
   \smallskip\normalsize
   \ifstrequal{#2}{}{}{
-  \textbf{\color{body}#2}\par
-  \smallskip}
+  \normalsize{\color{emphasis}#2}\par
+  \medskip}
   \ifstrequal{#3}{}{}{{\small\makebox[0.5\linewidth][l]{\faGithub~#3}}}\par
   \ifstrequal{#4}{}{}{{\small\makebox[0.5\linewidth][l]{\faMapMarker~#4}}}\par
   \medskip\normalsize
