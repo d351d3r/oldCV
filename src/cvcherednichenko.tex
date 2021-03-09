@@ -23,12 +23,14 @@
 
 \documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
 
+
 %% AltaCV uses the fontawesome5 and academicon fonts
 %% and packages.
 %% See http://texdoc.net/pkg/fontawesome5 and http://texdoc.net/pkg/academicons for full list of symbols. You MUST compile with XeLaTeX or LuaLaTeX if you want to use academicons.
 
 % Change the page layout if you need to
 \geometry{left=1.25cm,right=1.25cm,top=1.5cm,bottom=1.5cm,columnsep=1.2cm}
+
 
 % The paracol package lets you typeset columns of text in parallel
 \usepackage{paracol}
@@ -84,13 +86,13 @@
 %  \birthday{05-06-2001}
   \location{Khabarovsk, RU}
   \email{greatestcombinator@gmail.com}
-   \phone{+7-924-209-26-06}
 %  \mailaddress{Address, Street, 00000 County}
-  \homepage{desidesoft.dev}
+\telegram{d351d3r}
+\homepage{desidesoft.dev}
 %  \twitter{@}
-    \telegram{d351d3r}
     \github{d351d3r}
   \linkedin{anatolii-cherednichenko}
+  \phone{+7-924-209-26-06}
 %   \github{github.com/mmayer} % I'm just making this up though.
 %   \orcid{orcid.org/0000-0000-0000-0000} % Obviously making this up too. If you want to use this field (and also other academicons symbols), add "academicons" option to \documentclass{altacv}
   %% You MUST add the academicons option to \documentclass, then compile with LuaLaTeX or XeLaTeX, if you want to use \orcid or other academicons commands.
@@ -121,7 +123,7 @@
 
 \cvprojects{{\faCircleNotch}The use of extended attributes}{
 \begin{itemize}
-\item Technology stack: С, Linux
+\item Technology stack: C, Linux
 \item Applying extended attributes (xattr) in Linux file systems
 \end{itemize}
 
@@ -156,8 +158,10 @@
 \cvsection{Accomplishments}
 \cvevent{C ++ Development Fundamentals: Yellow Belt}{Coursera}{January 2021}{}
 \cvevent{C ++ Development Fundamentals: White Belt}{Coursera}{December 2020}{}
-\cvevent{ACM ICPC QUARTERFINALS}{}{2020}{}
-\cvevent{Winner of the Far Eastern regional stage of the "Leaders of Digital" hackathon}{}{2020}{}
+\cvsection{Events}
+\cvevent{Participant of the Engineering Forum of the Ural Federal University in the direction of "Software Engineering and Radio Engineering" from the Yandex-Professional Olympiad}{}{March 2021}{}
+\cvevent{Winner of the Far Eastern regional stage of the "Leaders of Digital" hackathon}{}{November 2020}{}
+\cvevent{ACM ICPC QUARTERFINALS}{}{November 2020}{}
 % \cvsection{Experience}
 
 % \cvevent{President \& CEO}{Yahoo!}{July 2012 -- Ongoing}{Sunnyvale, CA}
@@ -250,23 +254,24 @@
 
 % \divider\smallskip
 
-% \cvtag{C++}
-% \cvtag{Python}
-% \cvtag{Git}
-% \cvtag{SQL}
-% \cvtag{GNU/Linux}
-% \cvtag{Algorithms}
 % \cvtag{Mobile Devices \& Applications}
 % \cvtag{Product Management \& Marketing}
 
 \cvsection{Skills}
-\printinfo{\faCuttlefish}{C++}
-\printinfo{\faGit}{Git}
-\printinfo{\faPython}{Python}
-\printinfo{\faLinux}{GNU/\/Linux}
-\printinfo{\faCircleNotch}{CI/CD}
-\printinfo{\faDatabase}{SQL}
-\printinfo{\faCode}{Algorithms}
+\cvtag{C++}
+\cvtag{Python}
+\cvtag{GNU/Linux}
+\cvtag{Git}
+\cvtag{SQL}
+\cvtag{CI/CD}
+\cvtag{Algorithms}
+% \printinfo{\faCuttlefish}{C++}
+% \printinfo{\faGit}{Git}
+% \printinfo{\faPython}{Python}
+% \printinfo{\faLinux}{GNU/\/Linux}
+% \printinfo{\faCircleNotch}{CI/CD}
+% \printinfo{\faDatabase}{SQL}
+% \printinfo{\faCode}{Algorithms}
 % \printinfo{\faNodeJs}{JavaScript}
 
 \cvsection{Languages}
