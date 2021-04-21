@@ -1,4 +1,4 @@
-%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%
 % This is an example CV created using altacv.cls (v1.3, 10 May 2020) written by
 % LianTze Lim (liantze@gmail.com), based on the
 % Cv created by BusinessInsider at http://www.businessinsider.my/a-sample-resume-for-marissa-mayer-2016-7/?r=US&IR=T
@@ -39,11 +39,11 @@
 % Change the font if you want to, depending on whether
 % you're using pdflatex or xelatex/lualatex
 \ifxetexorluatex
-  % If using xelatex or lualatex:
-  \setmainfont{Lato}
+% If using xelatex or lualatex:
+\setmainfont{Lato}
 \else
-  % If using pdflatex:
-  \usepackage[default]{lato}
+% If using pdflatex:
+\usepackage[default]{lato}
 \fi
 
 % Change the colours if you want to
@@ -71,28 +71,28 @@
 \renewcommand{\ratingmarker}{\faCircle}
 
 %% sample.bib contains your publications
-\addbibresource{sample.bib}
+% \addbibresource{sample.bib}
 
 \begin{document}
-\name{Anatolii Cherednichenko}
-\tagline{Junior Backend Software Engineer}
+  \name{Anatolii Cherednichenko}
+  \tagline{Junior Backend Software Engineer}
 % Cropped to square from https://en.wikipedia.org/wiki/Marissa_Mayer#/media/File:Marissa_Mayer_May_2014_(cropped).jpg, CC-BY 2.0
 %% You can add multiple photos on the left or right
 % \photoR{2.5cm}{./avatar}
 % \photoL{2cm}{Yacht_High,Suitcase_High}
-\personalinfo{%
+  \personalinfo{%
   % Not all of these are required!
   % You can add your own with \printinfo{symbol}{detail}
 %  \birthday{05-06-2001}
-  \location{Khabarovsk, RU}
-  \email{greatestcombinator@gmail.com}
+    \location{Khabarovsk, RU}
+    \email{anatolii.cherednichenko2001@gmail.com}
 %  \mailaddress{Address, Street, 00000 County}
-\telegram{d351d3r}
-\homepage{desidesoft.dev}
+    \telegram{d351d3r}
+    \homepage{d351d3r.github.io}
 %  \twitter{@}
     \github{d351d3r}
-  \linkedin{anatolii-cherednichenko}
-  \phone{+7-924-209-26-06}
+    \linkedin{anatolii-cherednichenko}
+    \phone{+7-924-209-26-06}
 %   \github{github.com/mmayer} % I'm just making this up though.
 %   \orcid{orcid.org/0000-0000-0000-0000} % Obviously making this up too. If you want to use this field (and also other academicons symbols), add "academicons" option to \documentclass{altacv}
   %% You MUST add the academicons option to \documentclass, then compile with LuaLaTeX or XeLaTeX, if you want to use \orcid or other academicons commands.
@@ -104,47 +104,38 @@
   %% \NewInfoFiled{fieldname}{symbol}[optional hyperlink prefix] and use it:
   % \NewInfoField{gitlab}{\faGitlab}[https://gitlab.com/]
   % \gitlab{your_id}
-}
+  }
 
-\makecvheader
+  \makecvheader
 
 %% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
 % \AtBeginEnvironment{itemize}{\small}
 
 %% Set the left/right column width ratio to 6:4.
-\columnratio{0.6}
+  \columnratio{0.6}
 
 % Start a 2-column paracol. Both the left and right columns will automatically
 % break across pages if things get too long.
-\begin{paracol}{2}
+  \begin{paracol}{2}
 
 
-\cvsection{Projects}
+    \cvsection{Projects}
 
-\cvprojects{{\faCircleNotch}The use of extended attributes}{
-\begin{itemize}
-\item Technology stack: C, Linux
-\item Applying extended attributes (xattr) in Linux file systems
-\end{itemize}
+    \cvprojects{{\faCircleNotch}The use of extended attributes}{
+      \begin{itemize}
+        \item Technology stack: C, Linux
+        \item Applying extended attributes (xattr) in Linux file systems
+      \end{itemize}
 
-}{github.com/d351d3r/TestXattr}{}
+    }{github.com/d351d3r/TestXattr}{}
 
-\cvprojects{{\faPython}Reviews parser and classifier}{
-\begin{itemize}
-\item Technology stack: Dostoevsky library, fasttext
-\item Parser of reviews from the site irecommend.ru, sentiment determination, classification by keywords. Team development at the "Startup-Depo 2020" hackathon.
-\end{itemize}
+    \cvprojects{{\faPython}Reviews parser and classifier}{
+      \begin{itemize}
+        \item Technology stack: Dostoevsky library, fasttext
+        \item Parser of reviews from the site irecommend.ru, sentiment determination, classification by keywords. Team development at the "Startup-Depo 2020" hackathon.
+      \end{itemize}
 
-}{github.com/d351d3r/dbInit}{}
-
-% \divider
-% \cvprojects{{\faPython}Website on Django}{
-% \begin{itemize}
-%  \item Led the \$5 billion acquisition of the company with Verizon -- the entity which believed most in the immense value Yahoo!\ has created
-%  \item Acquired Tumblr for \$1.1 billion and moved the company's blog there
-%  \end{itemize}
-
-% }{github.com/d351d3r/website-on-django}{demoproject.com}
+    }{github.com/d351d3r/dbInit}{}
 
 % \divider
 % \cvprojects{{\faPython}Website on Django}{
@@ -155,13 +146,22 @@
 
 % }{github.com/d351d3r/website-on-django}{demoproject.com}
 
-\cvsection{Accomplishments}
-\cvevent{C ++ Development Fundamentals: Yellow Belt}{Coursera}{January 2021}{}
-\cvevent{C ++ Development Fundamentals: White Belt}{Coursera}{December 2020}{}
-\cvsection{Events}
-\cvevent{Participant of the Engineering Forum of the Ural Federal University in the direction of "Software Engineering and Radio Engineering" from the Yandex-Professional Olympiad}{}{March 2021}{}
-\cvevent{Winner of the Far Eastern regional stage of the "Leaders of Digital" hackathon}{}{November 2020}{}
-\cvevent{ACM ICPC QUARTERFINALS}{}{November 2020}{}
+% \divider
+% \cvprojects{{\faPython}Website on Django}{
+% \begin{itemize}
+%  \item Led the \$5 billion acquisition of the company with Verizon -- the entity which believed most in the immense value Yahoo!\ has created
+%  \item Acquired Tumblr for \$1.1 billion and moved the company's blog there
+%  \end{itemize}
+
+% }{github.com/d351d3r/website-on-django}{demoproject.com}
+
+    \cvsection{Accomplishments}
+    \cvevent{C ++ Development Fundamentals: Yellow Belt}{Coursera}{January 2021}{}
+    \cvevent{C ++ Development Fundamentals: White Belt}{Coursera}{December 2020}{}
+    \cvsection{Events}
+    \cvevent{Participant of the Engineering Forum of the Ural Federal University in the direction of "Software Engineering and Radio Engineering" from the Yandex-Professional Olympiad}{}{March 2021}{}
+    \cvevent{Winner of the Far Eastern regional stage of the "Leaders of Digital" hackathon}{}{November 2020}{}
+    \cvevent{ACM ICPC QUARTERFINALS}{}{November 2020}{}
 % \cvsection{Experience}
 
 % \cvevent{President \& CEO}{Yahoo!}{July 2012 -- Ongoing}{Sunnyvale, CA}
@@ -200,7 +200,7 @@
 % \wheelchart{outer radius}{inner radius}{
 % comma-separated list of value/text width/color/detail}
 % Some ad-hoc tweaking to adjust the labels so that they don't overlap
-\hspace*{-1em}  %% quick hack to move the wheelchart a bit left
+    \hspace*{-1em}  %% quick hack to move the wheelchart a bit left
 % \wheelchart{1.5cm}{0.5cm}{%
 %   10/13em/accent!30/Sleeping \& dreaming about work,
 %   25/9em/accent!60/Public resolving issues with Yahoo!\ investors,
@@ -227,10 +227,10 @@
 
 % \divider
 
-%  
+%
 %% Switch to the right column. This will now automatically move to the second
 %% page if the content is too long.
-\switchcolumn
+    \switchcolumn
 
 % \cvsection{Life Philosophy}
 % \begin{quote}
@@ -257,14 +257,14 @@
 % \cvtag{Mobile Devices \& Applications}
 % \cvtag{Product Management \& Marketing}
 
-\cvsection{Skills}
-\cvtag{C++}
-\cvtag{Python}
-\cvtag{GNU/Linux}
-\cvtag{Git}
-\cvtag{SQL}
-\cvtag{CI/CD}
-\cvtag{Algorithms}
+    \cvsection{Skills}
+    \cvtag{C++}
+    \cvtag{Python}
+    \cvtag{GNU/Linux}
+    \cvtag{Git}
+    \cvtag{SQL}
+    \cvtag{CI/CD}
+    \cvtag{Algorithms}
 % \printinfo{\faCuttlefish}{C++}
 % \printinfo{\faGit}{Git}
 % \printinfo{\faPython}{Python}
@@ -274,21 +274,21 @@
 % \printinfo{\faCode}{Algorithms}
 % \printinfo{\faNodeJs}{JavaScript}
 
-\cvsection{Languages}
+    \cvsection{Languages}
 
-\cvskill{English}{B1 (Intermediate English)}
+    \cvskill{English}{B1 (Intermediate English)}
 % \divider
 
-\cvskill{Russian}{Native speaker}
+    \cvskill{Russian}{Native speaker}
 % \divider
 
-\cvsection{Education}
+    \cvsection{Education}
 
 % \cvevent{M.S.\ in Computer Science}{Stanford University}{Sept 1997 -- June 1999}{}
 
 % \divider
 
-\cvevent{BScin \ in Infocommunication technologies and communication systems}{Far Eastern STU (DVGUPS) }{since 2019 to present }{}
+    \cvevent{BScin \ in Infocommunication technologies and communication systems}{Far Eastern STU (DVGUPS) }{since 2019 to present }{}
 
 % \newpage
 
@@ -303,6 +303,6 @@
 % \cvref{Prof.\ Gamma Delta}{Institute}{g.delta@university.edu}
 % {Address Line 1\\Address line 2}
 
-\end{paracol}
+  \end{paracol}
 
 \end{document}

@@ -1,5 +1,5 @@
 #!/bin/bash
 cd src
-# pdflatex cvcherednichenko.tex -o ../'Cherednichenko CV.pdf'
+pdflatex cvcherednichenko.tex -o ../'cv cherednichenko.pdf'
 cd ..
-pdftoppm -png -r 600 'Cherednichenko CV.pdf' > 'Cherednichenko CV.png'
+pdftoppm -png -r 600 'cv cherednichenko.pdf' > 'Cherednichenko CV.png'
